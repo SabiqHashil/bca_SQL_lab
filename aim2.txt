@@ -1,4 +1,5 @@
-Create a table Hospital with the fields 
+Question:
+1. Create a table Hospital with the fields 
 (doctorid,doctorname,department,qualification,experience).
 Write the queries to perform the following.
 a) Insert 5 records
@@ -11,7 +12,8 @@ f) update the experience of doctor with doctored=’D003’ to 5
 g) Delete the doctor with DoctorID=’D005’
 
 
-CREATE TABLE hospital(docid varchar(10), docname varchar(20),dept varchar(10),qualification varchar(15), experience int);
+Queries:
+1. CREATE TABLE hospital(docid varchar(10), docname varchar(20),dept varchar(10),qualification varchar(15), experience int);
 
 a) INSERT INTO hospital VALUES('D001','David','Kids','MD',3);
  INSERT INTO hospital VALUES('D002','John','Skin','MBBS',7);
@@ -21,14 +23,14 @@ a) INSERT INTO hospital VALUES('D001','David','Kids','MD',3);
  
  SELECT * FROM hospital;
  
-b)SELECT docname, dept from hospital;
+b) SELECT docname, dept from hospital;
 
-c)SELECT docname FROM hospital WHERE qualification = 'MD';
+c) SELECT docname FROM hospital WHERE qualification = 'MD';
 
-d)SELECT docname FROM hospital WHERE qualification != 'MD' and experience > 5;
+d) SELECT docname FROM hospital WHERE qualification != 'MD' and experience > 5;
 
-e)SELECT docname FROM hospital WHERE dept = 'Skin';
+e) SELECT docname FROM hospital WHERE dept = 'Skin';
 
-f)UPDATE hospital set experience = 5 where docid = 'D003';
+f) UPDATE hospital set experience = 5 where docid = 'D003';
 
-g)DELETE FROM hospital where docid='D005';
+g) DELETE FROM hospital where docid='D005';

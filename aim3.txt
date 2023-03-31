@@ -1,3 +1,4 @@
+Question:
 1. Create a table sales_man ( salesman_no primary key, s_name not null, 
 place, phone unique)
 2. Create table sales_order(order_no primary key, order_date not null, salesman_no foreign key references salesman_no in sales_man, del_type values should be either P or F (check constraints), order_status values should be 'Inprocess','Fullfilled','Backorder', 'Cancelled' (check constraints) )
@@ -8,17 +9,17 @@ d) Add primary key in sales_man using ALTER TABLE
 e) Add foreign key and CHECK constraints in sales_order table using ALTER 
 TABLE 
 
+Queries:
+1. CREATE TABLE sales_man (salesman_no varchar(5) primary key, s_name varchar(25) not null, place varchar(30), phone varchar(10) unique);
 
-1)CREATE TABLE sales_man (salesman_no varchar(5) primary key, s_name varchar(25) not null, place varchar(30), phone varchar(10) unique);
-
-a)INSERT INTO sales_man (salesman_no, s_name, place, phone) VALUES(101, 'Shuhaib', 'Puthanathani', 4567891232);
+a) INSERT INTO sales_man (salesman_no, s_name, place, phone) VALUES(101, 'Shuhaib', 'Puthanathani', 4567891232);
 INSERT INTO sales_man (salesman_no, s_name, place, phone) VALUES(102, 'Shamil', 'Kadampuzha', 1234567895);
 INSERT INTO sales_man VALUES(103, 'Shahul', 'Maravattam', 4718529635);
 SELECT * FROM sales_man;;
 
-2)CREATE TABLE sales_order(order_no varchar(5) primary key, order_date DATE not null, salesman_no varchar(5), del_type CHAR CHECK (del_type='P' OR del_type='F'), order_status varchar(15) CHECK (order_status='Inprocess' OR order_status='Fullfilled' OR order_status='Backorder' OR order_status='Cancelled'), foreign key(salesman_no) references sales_man (salesman_no));
+2. CREATE TABLE sales_order(order_no varchar(5) primary key, order_date DATE not null, salesman_no varchar(5), del_type CHAR CHECK (del_type='P' OR del_type='F'), order_status varchar(15) CHECK (order_status='Inprocess' OR order_status='Fullfilled' OR order_status='Backorder' OR order_status='Cancelled'), foreign key(salesman_no) references sales_man (salesman_no));
 
-a)INSERT INTO sales_order(order_no, order_date, salesman_no, del_type, order_status) VALUES(251, '21-3-2023', 101, 'P', 'Fulfilled');
+a) INSERT INTO sales_order(order_no, order_date, salesman_no, del_type, order_status) VALUES(251, '21-3-2023', 101, 'P', 'Fulfilled');
 INSERT INTO sales_order(order_no, order_date, salesman_no, del_type, order_status) VALUES(240, '20-3-2023', 102, 'F', 'Cancelled');
 INSERT INTO sales_order(order_no, order_date, salesman_no, del_type, order_status) VALUES(239, '20-3-2023', 103, 'F', 'Backorder');
 INSERT INTO sales_order(order_no, order_date, salesman_no, del_type, order_status) VALUES(235, '19-3-2023', 104, 'P', 'Inprocess');
@@ -26,14 +27,15 @@ SELECT * FROM sales_order;;
 
 <!---\d sales_man-----!>
 
-b)alter table sales_man drop constraint sales_man_pkey cascade;
 
-c)ALTER TABLE sales_order DROP constraint fk_salesman;
+c) ALTER TABLE sales_order DROP constraint fk_salesman;
 ALTER TABLE sales_order DROP constraint check_order_status;
 ALTER TABLE sales_order DROP constraint check_del_type;
 
-d)ALTER TABLE sales_man ADD constraint pk_salesman primary key(salesman_no);
+b) alter table sales_man drop constraint sales_man_pkey cascade;
 
-e)ALTER TABLE sales_order ADD constraint fk_salesman foreign key (salesman_no) references sales_man(salesman_no);
+d) ALTER TABLE sales_man ADD constraint pk_salesman primary key(salesman_no);
+
+e) ALTER TABLE sales_order ADD constraint fk_salesman foreign key (salesman_no) references sales_man(salesman_no);
 ALTER TABLE sales_order ADD constraint check_del_type check (del_type IN('P', 'F'));
 ALTER TABLE sales order ADD constraint checck_order_status check (order_status IN('Inprocess', 'Fullfilled', 'Backorder', 'Cancelled'));

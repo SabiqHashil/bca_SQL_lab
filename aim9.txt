@@ -1,4 +1,5 @@
-Prepare a salary report of the employees showing the details such as:
+Question:
+1. Prepare a salary report of the employees showing the details such as:
  EmpNo, Name, Basic Pay, DA, Gross Salary, PF, Net Salary, Annual Salary and Tax
  For this purpose, create a table named SALARIES having the following structure.
 
@@ -22,3 +23,5 @@ If annual salary is less than 100000, No Tax
 If annual salary is greater than 100000 but less than or equal to 150000, then the tax is 10% of the excess over 100000.
 If annual salary is greater than 150000 but less than or equal to 250000, then the tax is 20% of the excess over 150000.
 If annual salary is greater than 250000, then the tax is 30% of the excess over 250000
+
+Queries:

@@ -1,51 +1,53 @@
+
+Question:
 Consider the employee database given below. Give an expression in SQL for 
 each of the following queries:
-EMPLOYEE (Employee-Name, City)
-WORKS (Employee-Name, Company-Name, Salary)
-COMPANY (Company-Name, City)
-MANAGES (Employee-Name, Manager-Name)
+1. EMPLOYEE (Employee-Name, City)
+2. WORKS (Employee-Name, Company-Name, Salary)
+3. COMPANY (Company-Name, City)
+4. MANAGES (Employee-Name, Manager-Name)
 
-A) Find the names of all employees who work in Infosys
-B) Find the names and cities of residence of all employees who works in Wipro
-C) Find the names, and cities of all employees who work in Infosys and earn 
+a) Find the names of all employees who work in Infosys
+b) Find the names and cities of residence of all employees who works in Wipro
+c) Find the names, and cities of all employees who work in Infosys and earn 
 more than Rs. 10,000.
-D) Find the employees who live in the same cities as the companies for which 
+d) Find the employees who live in the same cities as the companies for which 
 they work.
-E) Find all employees who do not work in Wipro Corporation.
-F) Find the company that has the most employees
+e) Find all employees who do not work in Wipro Corporation.
+f) Find the company that has the most employees
 
-queries:
-create table employee(emp_name varchar(20),city varchar(20));
+Queries:
+1. create table employee(emp_name varchar(20),city varchar(20));
 
 insert into employee values('Sam','Cochin');
 insert into employee values('Rani','Pune');
 insert into employee values('Ram','Bengaluru');
 
-create table works(emp_name varchar(20), company_name varchar(30), salary int);
+2. create table works(emp_name varchar(20), company_name varchar(30), salary int);
 
 insert into works values('Sam','Wipro',15000);
 insert into works values('Ram','Infosys',25000);
 insert into works values('Rani','Wipro',22000);
 
-create table company(company_name varchar(30), city varchar(20));
+3. create table company(company_name varchar(30), city varchar(20));
 
 insert into company values('Winpro','Bengaluru');
 insert into company values('Infosys','Bengaluru');
 
-create table manages(emp_name varchar(20), managerd_name varchar(20));
+4. create table manages(emp_name varchar(20), managerd_name varchar(20));
 
 insert into manages values('Sam','Diya');
 insert into manages values('Ram','Arul');
 insert into manages values('Rani','Das');
 
-A) select emp_name from works where company_name ='Infosys';
+a) select emp_name from works where company_name ='Infosys';
 
-B)select employee.emp_name, employee.city from employee, works where employee.emp_name = works.emp_name and works.company_name = 'Wipro';
+b)select employee.emp_name, employee.city from employee, works where employee.emp_name = works.emp_name and works.company_name = 'Wipro';
 
-C)select employee.emp_name, employee.city from employee, works where employee.emp_name = works.emp_name and works.company_name = 'Infosys' and salary>10000;
+c) select employee.emp_name, employee.city from employee, works where employee.emp_name = works.emp_name and works.company_name = 'Infosys' and salary>10000;
 
-D)select employee.emp_name from employee, works, company where company.company_name = works.company_name and works.emp_name = employee.emp_name and company.city = employee.city;
+d) select employee.emp_name from employee, works, company where company.company_name = works.company_name and works.emp_name = employee.emp_name and company.city = employee.city;
 
-E) select * from works where company_name not in ('Wipro');
+e) select * from works where company_name not in ('Wipro');
 
-F) select company_name from works group by company_name having count(distinct emp_name) >= all (select count(distinct emp_name) from works group by company_name);
+f) select company_name from works group by company_name having count(distinct emp_name) >= all (select count(distinct emp_name) from works group by company_name);
