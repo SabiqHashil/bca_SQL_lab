@@ -1,5 +1,6 @@
 Question:
-1. Create a table customer (cust_no varchar (5), cust_name varchar (15), age 
+
+Create a table customer (cust_no varchar (5), cust_name varchar (15), age 
 number, phone varchar (10))
 a) insert 5 records and display it
 b) add new field d_birth with date datatype
@@ -12,7 +13,8 @@ g) rename the table cutomer to cust
 h) drop the table
 
 Queries:
-1. CREATE TABLE customer(cust_no varchar(5), cust_name varchar(15),age int,phone varchar(10)); 
+
+CREATE TABLE customer(cust_no varchar(5), cust_name varchar(15),age int,phone varchar(10)); 
 
 a) INSERT INTO customer VALUES('01', 'mahir', 20, '1234567890');
  INSERT INTO customer VALUES('02', 'rabeeh', 19, '8086009468');

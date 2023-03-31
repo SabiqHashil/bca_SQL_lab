@@ -1,0 +1,18 @@
+Question:
+
+Write a program block to calculate the electricity bill by accepting cust_no and units_consumed
+
+Queries:
+
+create table bill(consu_no int primary key,units int,amount float);
+create or replace function elebill(int,int) returns void as
+'
+declare
+consu_no alias for $1;
+units alias for $2;
+amount float;
+begin
+amount:=units*6.40;
+insert into bill values(consu_no,units,amount);
+end;
+'language'plpgsql';

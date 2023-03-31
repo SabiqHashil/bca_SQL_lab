@@ -1,5 +1,6 @@
 Question:
-1. Create a table employee with fields (EmpID, EName, Salary, Department, and 
+
+Create a table employee with fields (EmpID, EName, Salary, Department, and 
 Age). Insert some records. Write SQL queries using aggregate functions and 
 group by clause 
 A) Display the total number of employees.
@@ -13,7 +14,8 @@ H) Display the difference between highest and lowest salary
 
 
 Queries:
-1. create table employee (empid varchar(3) primary key, ename varchar(25), salary int, dept varchar(15), age int);
+
+create table employee (empid varchar(3) primary key, ename varchar(25), salary int, dept varchar(15), age int);
 
 insert into employee values('101','David',8000,'purchase',19);
 insert into employee values('102','John',8700,'sales',22);

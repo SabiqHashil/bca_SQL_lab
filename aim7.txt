@@ -1,5 +1,5 @@
-
 Question:
+
 Consider the employee database given below. Give an expression in SQL for 
 each of the following queries:
 1. EMPLOYEE (Employee-Name, City)
@@ -17,6 +17,7 @@ e) Find all employees who do not work in Wipro Corporation.
 f) Find the company that has the most employees
 
 Queries:
+
 1. create table employee(emp_name varchar(20),city varchar(20));
 
 insert into employee values('Sam','Cochin');

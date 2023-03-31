@@ -1,4 +1,5 @@
 Question:
+
 1. Create table supplier(supcode,sname,city)
 2. Create table product (pcode,pname)
 3. Create table supl_product(supcode,pcode,qty)
@@ -13,6 +14,7 @@ f) Get the number of Suppliers, who are supplying at least one product.
 g) For each product supplied, get the pcode. and the total quantity supplied for that part
 
 Queries:
+
 1. create table supplier(supcode varchar(3) primary key, sname varchar(30), city varchar(30));
 
 insert into supplier values('S1','Raju','Palakkad');

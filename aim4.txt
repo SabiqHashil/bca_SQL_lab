@@ -1,8 +1,10 @@
 Question:
+
 Create the following table:
 1) Bank_customer (accno primary key, cust_name, place)
 2) Deposit (accno foreign key, deposit_no, damount)
 3) Loan (accno foreign key loan_no, Lamount)
+
 Write the following queries
 a) Display the details of the customers
 b) Display the customers along with deposit amount who have only deposit 
@@ -13,6 +15,7 @@ d) Display the customers they have both loan and deposit with the bank
 e) Display the customer who have neither a loan nor a deposit with the bank
 
 Queries:
+
 1. create table bank_customer (accno varchar(6) primary key, cname varchar(20), place varchar(20));
 
 insert into bank_customer values('100301', 'John', 'kottakkal');

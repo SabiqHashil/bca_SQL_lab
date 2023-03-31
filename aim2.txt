@@ -1,5 +1,6 @@
 Question:
-1. Create a table Hospital with the fields 
+
+Create a table Hospital with the fields 
 (doctorid,doctorname,department,qualification,experience).
 Write the queries to perform the following.
 a) Insert 5 records
@@ -13,7 +14,8 @@ g) Delete the doctor with DoctorID=’D005’
 
 
 Queries:
-1. CREATE TABLE hospital(docid varchar(10), docname varchar(20),dept varchar(10),qualification varchar(15), experience int);
+
+CREATE TABLE hospital(docid varchar(10), docname varchar(20),dept varchar(10),qualification varchar(15), experience int);
 
 a) INSERT INTO hospital VALUES('D001','David','Kids','MD',3);
  INSERT INTO hospital VALUES('D002','John','Skin','MBBS',7);

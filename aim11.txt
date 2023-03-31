@@ -1,0 +1,21 @@
+Question:
+
+Write a program code to calculate the area of a circle for a value of radius varying from 3 to 7. Store the radius and the corresponding value of calculated area in an empty table named areas with field’s radius and area.
+
+Queries:
+
+Create table AREAS(RADIUS  int, AREA  int);
+Create or replace function calarea() returns void as
+‘
+Declare
+RAD int:=3;
+AREA int;
+Begin
+Loop 
+Area:=3.14 *RAD*RAD;
+Insert into areas values(RAD,AREA);
+RAD:=RAD+1;
+EXIT WHEN RAD>7;
+END LOOP;
+END;
+'language'plpgsql';

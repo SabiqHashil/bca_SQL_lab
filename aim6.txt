@@ -1,5 +1,6 @@
 Question:
-1. Create a table product with the fields (Product_code primary key, 
+
+Create a table product with the fields (Product_code primary key, 
 Product_Name, Category, Quantity, Price). 
 Insert some records Write the queries to perform the following.
 a) Display the records in the descending order of Product_Name
@@ -12,7 +13,8 @@ g) Display the products whose second letter is 'u' and belongs to the Category '
 
 
 Queries:
-1. create table products(pro_code varchar(3) primary key, pro_name varchar(15), category varchar(20), quantity int, price int);
+
+create table products(pro_code varchar(3) primary key, pro_name varchar(15), category varchar(20), quantity int, price int);
 
 insert into products values('101', 'lexi', 'pen', 120, 6);
 insert into products values('102', 'lux', 'bath soap', 600, 10);
