@@ -1,0 +1,31 @@
+Question:
+
+create a table stud_mark(regno, sname ,avg_mark)
+Insert few records
+Write a procedure to display number of students got Distinction, first-class, second class, third class or failed (90-100 distinction, 75-89 firstclass 60-74 second class 50-59 Third class below 50 failed)
+
+Queries:
+
+create table studmark(regno int primary key,sname varchar(20),avgmark float);
+insert into studmark values(10,'Sam',98);
+create or replace function mark() returns void as
+'
+declare
+dcount int:=0;
+fcount int:=0;
+scount int:=0;
+tcount int:=0;
+failed int:=0;
+begin
+select count(*) into dcount from studmark where avgmark>=90;
+raise notice ''The number of Distinction is:%'',dcount;
+select count(*) into fcount from studmark where avgmark>=75 and avgmark<90;
+raise notice ''The number of first class is:%'',fcount;
+select count(*) into scount from studmark where avgmark>=60 and avgmark<75;
+raise notice ''The number of second class is:%'',scount;
+select count(*) into tcount from studmark where avgmark>=50 and avgmark<60;
+raise notice ''The number of third class is:%'',tcount;
+select count(*) into failed from studmark where avgmark<50;
+raise notice ''The number of failed is:%'',failed;
+end;
+'language'plpgsql';

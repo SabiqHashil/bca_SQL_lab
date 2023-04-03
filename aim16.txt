@@ -1,0 +1,19 @@
+Question:
+
+Create a table emp_salary(empno,enamedept,salary)
+Write a function to return the average salary of a particular department by accepting departmentname as argument.
+
+Queries:
+
+create table emp1(empno int primary key,ename varchar(25),dept varchar(25),salary int);
+insert into emp1 values(100,'Arjun','sales',10000);
+create or replace function AVGSAL(varchar) returns int as
+'
+declare
+dpt alias for $1;
+sal int:=0;
+begin
+select AVG(salary) into sal from emp1 where dept=dpt;
+return sal;
+end;
+'language'plpgsql';
