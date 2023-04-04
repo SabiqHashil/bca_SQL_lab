@@ -1,0 +1,25 @@
+Question:
+
+Create table phonebook (pname, mobno)
+Create a Trigger to insert the old records from the table phonebook to del_phonebook (pname, mobno, modfy_date) whenever a record is deleted or updated in the phonebook table
+
+Queries:
+
+create table phonebook(pname varchar(25),mobno varchar(10));
+
+create table delphonebook(pname varchar(25),mobno varchar(10),modtime time);
+
+insert into phonebook values('Arjun','9856321421');
+
+create trigger storedeleted
+after delete on phonebook
+for each each row execute procedure contact();
+
+
+create or replace function contact() returns trigger as
+'
+begin
+insert into delphonebook values(old.pname,mobno,CURRENT_TIME);
+return old;
+end;
+'language'plpgsql';
