@@ -7,7 +7,7 @@ Queries:
 Create table AREAS(RADIUS  int, AREA  int);
 Create or replace function calarea() returns void as
 ‘
-Declare
+declare
 RAD int:=3;
 AREA int;
 Begin
