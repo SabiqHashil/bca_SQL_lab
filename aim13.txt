@@ -21,4 +21,4 @@ a:=b;
 b:=c;
 end loop;
 end;
-'language'plpg;sql';
+'language'plpgsql';
