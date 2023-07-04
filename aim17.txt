@@ -19,7 +19,7 @@ BEGIN
   RETURN NEW;
 END;
 $$
-LANGUAGE plpgsql;
+'language'plpgsql';
 
 
 
